@@ -5,7 +5,7 @@
     <!--
      | POM Relationships
 	-->
-    <groupId>com.esilv</groupId>
+    <groupId>com.converter</groupId>
     <artifactId>CurrencyConverter</artifactId>
     <version>0.1</version>
 
@@ -43,9 +43,9 @@
     </build>
 
     <scm>
-        <connection>scm:git:https://github.com/PBZ-InsightR/Finance4JMiff2.git</connection>
-        <developerConnection>scm:git:https://github.com/PBZ-InsightR/Finance4JMiff2.git</developerConnection>
-        <url>https://github.com/PBZ-InsightR/Finance4JMiff2</url>
+        <connection>scm:git:https://github.com/Karlito97/CurrencyConverter.git</connection>
+        <developerConnection>scm:git:https://github.com/Karlito97/CurrencyConverter.git</developerConnection>
+        <url>https://github.com/Karlito97/CurrencyConverter</url>
     </scm>
 
     <repositories/>
