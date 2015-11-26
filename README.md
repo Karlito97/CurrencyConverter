@@ -1,2 +1,2 @@
 # CurrencyConverter
-School project : Convert many currency
+School project : Convert many currencies
