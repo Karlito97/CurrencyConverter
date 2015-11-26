@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextFlow layoutX="14.0" layoutY="14.0" prefHeight="45.0" prefWidth="380.0" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur Currency Converter">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <Text layoutX="36.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculez les taux de change de plusieurs devises à travers le monde entier. C'est gratuit !" textAlignment="CENTER" wrappingWidth="328.607421875" />
+      <Separator layoutX="10.0" layoutY="120.0" prefHeight="4.0" prefWidth="380.0" />
+      <ButtonBar layoutX="35.0" layoutY="124.0" prefHeight="60.0" prefWidth="330.0" AnchorPane.topAnchor="124.0">
+        <buttons>
+          <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Convertir" />
+            <Button mnemonicParsing="false" prefHeight="30.0" text="Taux" />
+        </buttons>
+         <padding>
+            <Insets right="40.0" />
+         </padding>
+      </ButtonBar>
+      <Separator layoutX="10.0" layoutY="109.0" prefHeight="4.0" prefWidth="380.0" />
+      <Label layoutX="237.0" layoutY="199.0" text="Copyright © 2015 Charles Jr Salé™">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
