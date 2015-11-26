@@ -7,10 +7,8 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -47,12 +45,11 @@ public class MainApp extends Application {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            Parent root = FXMLLoader.load(getClass().getResource("com.converter.view/Accueil.fxml"));
-            //loader.setLocation(MainApp.class.getResource("com.converter.view/Accueil.fxml"));
-            //rootLayout = loader.load();
+            loader.setLocation(MainApp.class.getClassLoader().getResource("com.converter.view/Accueil.fxml"));
+            rootLayout = (AnchorPane)loader.load();
 
             // Show the scene containing the root layout.
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
