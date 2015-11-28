@@ -7,12 +7,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.converter.view.AccueilController">
    <children>
       <TextFlow layoutX="14.0" layoutY="14.0" prefHeight="45.0" prefWidth="380.0" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur Currency Converter">
+            <Text fill="#05b8ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur Currency Converter">
                <font>
                   <Font size="24.0" />
                </font>
@@ -23,7 +22,7 @@
       <Separator layoutX="10.0" layoutY="120.0" prefHeight="4.0" prefWidth="380.0" />
       <ButtonBar layoutX="35.0" layoutY="124.0" prefHeight="60.0" prefWidth="330.0" AnchorPane.topAnchor="124.0">
         <buttons>
-          <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Convertir" />
+          <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" onAction="#handleConvertir" text="Convertir" />
             <Button mnemonicParsing="false" prefHeight="30.0" text="Taux" />
         </buttons>
          <padding>

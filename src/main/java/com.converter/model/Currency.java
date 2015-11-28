@@ -61,6 +61,16 @@ public class Currency {
      *
      * @param identifiant
      * @param devise
+     */
+    public Currency(String identifiant, String devise) {
+        this.identifiant = new SimpleStringProperty(identifiant);
+        this.devise = new SimpleStringProperty(devise);
+    }
+    /**
+     * Constructor .
+     *
+     * @param identifiant
+     * @param devise
      * @param taux
      */
     public Currency(String identifiant, String devise, double taux) {
@@ -68,4 +78,10 @@ public class Currency {
         this.devise = new SimpleStringProperty(devise);
         this.taux = new SimpleDoubleProperty(taux);
     }
+
+    @Override
+    public String toString(){
+        return getIdentifiant() + " - " + getDevise();
+    }
+
 }

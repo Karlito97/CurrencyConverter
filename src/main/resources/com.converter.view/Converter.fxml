@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.converter.view.ConverterController">
    <children>
       <TabPane layoutY="27.0" prefHeight="236.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -16,9 +16,9 @@
                      <children>
                         <AnchorPane layoutX="20.0" layoutY="32.0" prefHeight="30.0" prefWidth="450.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                            <children>
-                              <TextField alignment="CENTER" layoutX="14.0" layoutY="3.0" prefHeight="25.0" prefWidth="40.0" text="1" />
-                              <ChoiceBox layoutX="70.0" layoutY="2.0" prefWidth="150.0" />
-                              <ChoiceBox layoutX="290.0" layoutY="2.0" prefWidth="150.0" />
+                              <TextField fx:id="uniteField" alignment="CENTER" layoutX="-6.0" layoutY="2.0" prefHeight="25.0" prefWidth="40.0" text="1" />
+                              <ChoiceBox fx:id="fromChoiceBox" layoutX="50.0" layoutY="2.0" prefHeight="25.0" prefWidth="180.0" AnchorPane.leftAnchor="50.0" />
+                              <ChoiceBox fx:id="toChoiceBox" layoutX="273.0" layoutY="2.0" prefWidth="180.0" />
                               <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="240.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/plaques.png" />
@@ -26,7 +26,7 @@
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <Button layoutX="150.0" layoutY="89.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Convertir" textFill="#05b8ff">
+                        <Button layoutX="150.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleConvertir" prefHeight="30.0" prefWidth="200.0" text="Convertir" textFill="#05b8ff">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -39,22 +39,22 @@
                                     <Image url="@../images/equal.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="120.0" layoutY="5.0" text="XAF" textAlignment="CENTER" textFill="#05b8ff">
+                              <Label fx:id="idDeviseFromLabel" layoutX="120.0" layoutY="5.0" text="XAF" textAlignment="CENTER" textFill="#05b8ff">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="190.0" layoutY="5.0" text="EUR" textAlignment="CENTER" textFill="#05b8ff">
+                              <Label fx:id="idDeviseToLabel" layoutX="190.0" layoutY="5.0" text="EUR" textAlignment="CENTER" textFill="#05b8ff">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER_RIGHT" layoutX="5.0" layoutY="5.0" prefHeight="17.0" prefWidth="110.0" text="1,00" textAlignment="RIGHT">
+                              <Label fx:id="uniteFromLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="5.0" prefHeight="17.0" prefWidth="110.0" text="1,00" textAlignment="RIGHT">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="225.0" layoutY="5.0" prefHeight="17.0" prefWidth="110.0" text="655,65555">
+                              <Label fx:id="uniteToLabel" layoutX="225.0" layoutY="5.0" prefHeight="17.0" prefWidth="110.0" text="655,65555">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -63,10 +63,15 @@
                         </AnchorPane>
                         <AnchorPane layoutX="80.0" layoutY="170.0" prefHeight="30.0" prefWidth="340.0">
                            <children>
-                              <Label alignment="CENTER_RIGHT" prefHeight="15.0" prefWidth="150.0" text="Franc de l'Afrique Centrale" textAlignment="RIGHT" textFill="#0200ff" />
-                              <Label alignment="CENTER_RIGHT" layoutY="15.0" prefHeight="17.0" prefWidth="150.0" text="1 XAF = 655,65555 EUR" textAlignment="RIGHT" textFill="#00000099" />
-                              <Label layoutX="190.0" prefHeight="15.0" prefWidth="150.0" text="Euro" textFill="#0200ff" />
-                              <Label layoutX="190.0" layoutY="15.0" prefHeight="17.0" prefWidth="150.0" text="1 EUR = 0,0015 EUR" textFill="#00000099" />
+                              <Label fx:id="detailsDeviseFromLabel" alignment="CENTER_RIGHT" prefHeight="15.0" prefWidth="150.0" text="Franc de l'Afrique Centrale" textAlignment="RIGHT" textFill="#0200ff" />
+                              <Label fx:id="detailsConversionFromLabel" alignment="CENTER_RIGHT" layoutY="15.0" prefHeight="17.0" prefWidth="150.0" text="1 XAF = 655,65555 EUR" textAlignment="RIGHT" textFill="#00000099" />
+                              <Label fx:id="detailsDeviseToLabel" layoutX="190.0" prefHeight="15.0" prefWidth="150.0" text="Euro" textFill="#0200ff" />
+                              <Label fx:id="detailsConversionToLabel" layoutX="190.0" layoutY="15.0" prefHeight="17.0" prefWidth="150.0" text="1 EUR = 0,0015 EUR" textFill="#00000099" />
+                              <Label alignment="CENTER" layoutX="156.0" layoutY="1.0" text=" ↔ " textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </children>
@@ -109,7 +114,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label layoutX="149.0" layoutY="270.0" prefHeight="20.0" prefWidth="205.0" text="Cours moyens : 2015-11-27 02:55 UTC" textAlignment="CENTER" textFill="#0200ff" />
+      <Label fx:id="detailsHorairesLabel" layoutX="149.0" layoutY="270.0" prefHeight="20.0" prefWidth="205.0" text="Cours moyens : 2015-11-27 02:55 UTC" textAlignment="CENTER" textFill="#0200ff" />
       <Separator layoutY="267.0" prefHeight="0.0" prefWidth="500.0" />
       <Label layoutX="417.0" layoutY="283.0" text="© Charles Jr Salé™">
          <font>
